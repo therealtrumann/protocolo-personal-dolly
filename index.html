@@ -868,6 +868,27 @@
     .serious__trust { color: rgba(255,255,255,0.45); font-size: 0.8rem; margin-top: 1rem; }
 
     /* ================================================
+       SEÇÃO — CONTATO / DÚVIDAS
+    ================================================ */
+    .contact {
+      background: var(--green-50);
+      text-align: center;
+    }
+    .contact__inner { max-width: 640px; margin: 0 auto; }
+    .contact__h {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 0.75rem;
+    }
+    .contact__sub {
+      color: var(--gray-600);
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      line-height: 1.6;
+      margin-bottom: 2.25rem;
+    }
+
+    /* ================================================
        SEÇÃO 11 — AUTORIDADE
     ================================================ */
     .authority { background: var(--green-50); }
@@ -1728,6 +1749,28 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SEÇÃO — CONTATO / DÚVIDAS
+    ================================================ -->
+    <section class="contact section" aria-label="Fale conosco pelo WhatsApp">
+      <div class="contact__inner container">
+        <div class="section-tag anim" style="justify-content:center;">
+          <span class="tag tag--green">SUPORTE</span>
+        </div>
+        <h2 class="contact__h anim">Ainda tem dúvidas?<br>Fale conosco.</h2>
+        <p class="contact__sub anim">
+          Nossa equipe está pronta para responder qualquer pergunta antes da sua decisão.
+          Sem pressão, sem script de vendas.
+        </p>
+        <div class="anim">
+          <a href="https://wa.me/55XXXXXXXXXXX" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener" aria-label="Tirar dúvidas pelo WhatsApp">
+            <i data-lucide="message-circle" class="icon-md"></i>
+            TIRAR DÚVIDAS NO WHATSAPP
+          </a>
         </div>
       </div>
     </section>
