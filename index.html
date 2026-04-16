@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Protocolo de treino e dieta específico para quem usa caneta emagrecedora (GLP-1). Emagreça 3x mais rápido com o Protocolo Personal Dolly.">
+  <meta name="theme-color" content="#0D2818">
+  <title>Protocolo Personal Dolly — Para Usuários de Caneta Emagrecedora</title>
+  <!-- Preconnects para recursos externos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://randomuser.me" crossorigin>
+  <!-- Fontes: apenas pesos usados na página -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Lucide com defer: não bloqueia renderização -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <style>
+    /* ================================================
+       CUSTOM PROPERTIES
+    ================================================ */
+    :root {
+      --green-900: #0D2818;
+      --green-800: #1A3A2A;
+      --green-700: #1A6B3C;
+      --green-600: #2D8653;
+      --green-500: #3DAF6A;
+      --green-400: #5CC981;
+      --green-100: #EEF7F1;
+      --green-50:  #F5FBF7;
+      --orange:    #E65C00;
+      --orange-light: #FFF3E0;
+      --red-light: #FFF0F0;
+      --red-text:  #CC2200;
+      --gold:      #F0C040;
+      --dark:      #0D1A12;
+      --gray-900:  #1E1E1E;
+      --gray-600:  #555555;
+      --gray-300:  #CCCCCC;
+      --gray-100:  #F5F5F5;
+      --white:     #FFFFFF;
+      --header-h:  64px;
+      --container: 1100px;
+      --radius-card: 1.25rem;
+      --shadow-card: 0 4px 24px rgba(0,0,0,0.07);
+      --shadow-hover: 0 12px 40px rgba(0,0,0,0.14);
+      --shadow-btn:  0 8px 32px rgba(26,107,60,0.35);
+      --transition:  0.25s ease;
+    }
+
+    /* ================================================
+       RESET & BASE
+    ================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--gray-900);
+      line-height: 1.7;
+      overflow-x: hidden;
+      background: var(--white);
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    svg { display: block; }
+
+    /* ================================================
+       UTILITIES
+    ================================================ */
+    .container {
+      width: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .section {
+      padding: 5rem 1.5rem;
+    }
+
+    /* Performance: renderização diferida para seções abaixo do fold */
+    .social-proof, .problem, .solution-sec, .how, .for-whom,
+    .offer-sec, .pricing, .serious, .faq {
+      content-visibility: auto;
+      contain-intrinsic-size: 0 600px;
+    }
+
+    /* Placeholder — campos a preencher */
+    .ph {
+      color: var(--orange);
+      background: var(--orange-light);
+      padding: 0 4px;
+      border-radius: 3px;
+      font-style: normal;
+    }
+
+    /* Tag/badge de seção */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .tag--green  { background: rgba(61,175,106,0.15); border: 1px solid rgba(61,175,106,0.3); color: var(--green-400); }
+    .tag--gold   { background: rgba(240,192,64,0.15);  border: 1px solid rgba(240,192,64,0.3);  color: var(--gold); }
+    .tag--orange { background: rgba(230,92,0,0.12);    border: 1px solid rgba(230,92,0,0.25);   color: var(--orange); }
+    .tag--red    { background: rgba(204,34,0,0.10);    border: 1px solid rgba(204,34,0,0.2);    color: var(--red-text); }
+    .tag--white  { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.85); }
+
+    /* Tamanhos de ícone */
+    .icon-xs  { width: 14px; height: 14px; flex-shrink: 0; }
+    .icon-sm  { width: 16px; height: 16px; flex-shrink: 0; }
+    .icon-md  { width: 22px; height: 22px; flex-shrink: 0; }
+    .icon-lg  { width: 28px; height: 28px; flex-shrink: 0; }
+    .icon-xl  { width: 48px; height: 48px; flex-shrink: 0; }
+
+    /* Animação de entrada */
+    .anim {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      will-change: transform, opacity;
+    }
+    .anim.visible { opacity: 1; transform: translateY(0); }
+
+    /* ================================================
+       BOTÕES
+    ================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 1.125rem 2.5rem;
+      border-radius: 0.75rem;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all var(--transition);
+      cursor: pointer;
+      font-family: inherit;
+      border: none;
+      will-change: transform;
+    }
+    .btn--primary {
+      background: linear-gradient(135deg, var(--green-600), var(--green-700));
+      color: var(--white);
+      box-shadow: var(--shadow-btn);
+    }
+    .btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(26,107,60,0.45);
+      filter: brightness(1.05);
+    }
+    .btn--primary:active { transform: translateY(0); }
+    .btn--primary .arrow { transition: transform var(--transition); }
+    .btn--primary:hover .arrow { transform: translateX(4px); }
+    .btn--gold {
+      background: var(--gold);
+      color: var(--green-800);
+      font-weight: 900;
+      box-shadow: 0 8px 32px rgba(240,192,64,0.3);
+    }
+    .btn--gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(240,192,64,0.45);
+    }
+    .btn--whatsapp {
+      background: #25D366;
+      color: var(--white);
+      box-shadow: 0 8px 32px rgba(37,211,102,0.3);
+    }
+    .btn--whatsapp:hover {
+      transform: scale(1.02);
+      filter: brightness(1.05);
+    }
+    .btn--lg { padding: 1.375rem 3.5rem; font-size: 1.125rem; }
+    .btn--full { width: 100%; }
+
+    /* ================================================
+       HEADER FIXO
+    ================================================ */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: rgba(13,26,18,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      animation: slideDown 0.5s ease forwards;
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-100%); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .header__inner {
+      height: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .header__logo {
+      color: var(--green-400);
+      font-weight: 700;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .header__cta {
+      padding: 0.6rem 1.25rem;
+      font-size: 0.78rem;
+    }
+
+    /* ================================================
+       BARRA DE PROGRESSO
+    ================================================ */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green-500), var(--green-400));
+      z-index: 99;
+      transition: width 0.1s linear;
+    }
+
+    /* ================================================
+       BOTÃO WHATSAPP FLUTUANTE
+    ================================================ */
+    .wpp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 1.5rem;
+      z-index: 200;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(37,211,102,0.4);
+      transition: transform var(--transition), box-shadow var(--transition);
+      position: fixed;
+    }
+    .wpp-float::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #25D366;
+      animation: pulsewpp 2s ease-out infinite;
+      z-index: -1;
+    }
+    @keyframes pulsewpp {
+      0%   { transform: scale(1);   opacity: 0.4; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+    .wpp-float:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(37,211,102,0.55); }
+    .wpp-float__tooltip {
+      position: absolute;
+      right: calc(100% + 0.875rem);
+      background: var(--gray-900);
+      color: white;
+      padding: 0.4rem 0.875rem;
+      border-radius: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .wpp-float__tooltip::after {
+      content: '';
+      position: absolute;
+      left: 100%; top: 50%;
+      transform: translateY(-50%);
+      border: 5px solid transparent;
+      border-left-color: var(--gray-900);
+    }
+    .wpp-float:hover .wpp-float__tooltip { opacity: 1; }
+
+    /* ================================================
+       TARJA DE AUDIÊNCIA
+    ================================================ */
+    .audience-bar {
+      background: linear-gradient(135deg, var(--green-700), var(--green-600));
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      font-size: 0.825rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-top: 0;
+      line-height: 1.4;
+    }
+
+    /* ================================================
+       SEÇÃO 1 — HERO
+    ================================================ */
+    .hero {
+      background: linear-gradient(160deg, #0D2818 0%, #1A3A2A 50%, #0D2818 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 4rem 1.5rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero__glow {
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: var(--green-500);
+      filter: blur(120px);
+      opacity: 0.12;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .hero__content {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero__headline {
+      color: var(--white);
+      font-size: clamp(2.25rem, 5vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 1.5rem 0 1.25rem;
+    }
+    .hero__headline .gt {
+      background: linear-gradient(135deg, var(--green-500), var(--green-400));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero__subtitle {
+      color: rgba(255,255,255,0.7);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.65;
+      max-width: 680px;
+      margin: 0 auto 2rem;
+    }
+    .hero__urgency {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 1rem;
+      padding: 1.125rem 1.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 auto 2.25rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero__urgency-date { display: flex; align-items: center; gap: 0.5rem; color: white; font-weight: 700; font-size: 0.95rem; }
+    .hero__urgency-date i { color: var(--green-500); }
+    .hero__urgency-sep  { color: rgba(255,255,255,0.25); font-size: 1.1rem; }
+    .hero__urgency-vagas { color: var(--gold); font-weight: 700; font-size: 0.95rem; }
+    .hero__cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    .hero__trust { color: rgba(255,255,255,0.45); font-size: 0.8rem; }
+    .hero__scroll {
+      position: absolute;
+      bottom: 2rem; left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.3);
+      animation: bounce 1.8s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ================================================
+       SEÇÃO 2 — STATS
+    ================================================ */
+    .stats {
+      background: linear-gradient(135deg, var(--green-700), var(--green-600));
+      padding: 0;
+    }
+    .stats__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+    .stats__item {
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      border-right:  1px solid rgba(255,255,255,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+    .stats__item:nth-child(2n) { border-right: none; }
+    .stats__item:nth-last-child(-n+2) { border-bottom: none; }
+    .stats__number {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: white;
+      line-height: 1;
+    }
+    .stats__label {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+      margin-top: 0.35rem;
+    }
+
+    /* ================================================
+       SEÇÃO 3 — PROVA SOCIAL
+    ================================================ */
+    .social-proof { background: var(--green-50); }
+    .section-tag  { margin-bottom: 1rem; }
+    .section-h    { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 0.875rem; }
+    .section-sub  { font-size: clamp(0.95rem, 2vw, 1.1rem); color: var(--gray-600); line-height: 1.6; margin-bottom: 2.5rem; }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .testi-card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      padding: 2rem;
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-left: 4px solid var(--green-600);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .testi-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .testi-avatar {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-600), var(--green-700));
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 700; font-size: 1.125rem; flex-shrink: 0;
+      overflow: hidden; padding: 0;
+    }
+    .testi-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+    .testi-name { font-weight: 700; color: var(--gray-900); }
+    .testi-meta { color: #888; font-size: 0.875rem; }
+    .testi-stars { color: var(--gold); font-size: 0.875rem; letter-spacing: 0.1em; }
+    .testi-quote { color: var(--green-100); font-size: 4rem; line-height: 0; margin-bottom: 1.25rem; display: block; font-family: Georgia, serif; }
+    .testi-text  { font-style: italic; color: #444; line-height: 1.7; margin-bottom: 1.25rem; font-size: 0.95rem; }
+    .testi-badge {
+      background: var(--green-100);
+      border-radius: 999px;
+      padding: 0.35rem 0.875rem;
+      display: inline-block;
+      font-size: 0.8rem; font-weight: 700; color: var(--green-700);
+    }
+    .before-after {
+      background: var(--green-100);
+      border-radius: 1rem;
+      height: 220px;
+      border: 2px dashed var(--green-600);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.75rem; color: #888; font-size: 0.9rem;
+    }
+    .before-after-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .ba-col { position: relative; }
+    .ba-col img { width: 100%; height: 320px; object-fit: cover; display: block; }
+    .ba-label {
+      position: absolute;
+      bottom: 0.875rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.65);
+      color: white;
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .ba-label--after { background: var(--green-700); }
+    .before-after i { color: #aaa; }
+
+    /* ================================================
+       SEÇÃO 4 — PROBLEMA
+    ================================================ */
+    .problem { background: var(--white); }
+    .problem-narrative { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.875rem; }
+    .problem-quote {
+      background: var(--red-light);
+      border-left: 5px solid var(--red-text);
+      border-radius: 0 1rem 1rem 0;
+      padding: 1.5rem 2rem;
+      font-size: 1.2rem;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--red-text);
+      margin: 2rem 0;
+    }
+    .risks-h { color: var(--red-text); font-weight: 700; font-size: 1.1rem; margin: 1.75rem 0 1.25rem; }
+    .risks-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .risk-card {
+      background: #FFF8F8;
+      border: 1px solid #FFCCCC;
+      border-radius: 1rem;
+      padding: 1.75rem;
+    }
+    .risk-card__hd { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.625rem; }
+    .risk-card__hd i { color: var(--red-text); }
+    .risk-card__title { font-weight: 700; color: var(--red-text); font-size: 1.05rem; }
+    .risk-card__text  { color: var(--gray-600); font-size: 0.9rem; line-height: 1.6; }
+    .solution-teaser {
+      background: var(--green-100);
+      border-radius: 1rem;
+      padding: 1.75rem 2rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .solution-teaser i { color: var(--green-700); margin-top: 2px; flex-shrink: 0; }
+    .solution-teaser p { font-weight: 600; color: var(--green-700); line-height: 1.6; }
+
+    /* ================================================
+       SEÇÃO 5 — SOLUÇÃO (3 PILARES)
+    ================================================ */
+    .solution-sec {
+      background: linear-gradient(180deg, var(--green-900) 0%, var(--green-800) 100%);
+      color: white;
+    }
+    .solution-sec .section-h   { color: white; }
+    .solution-sec .section-sub { color: rgba(255,255,255,0.65); }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .pillar-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-card);
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .pillar-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(61,175,106,0.4);
+    }
+    .pillar-card__num {
+      position: absolute; top: 1rem; right: 1.5rem;
+      font-size: 5rem; font-weight: 900;
+      color: rgba(61,175,106,0.12);
+      line-height: 1; pointer-events: none; user-select: none;
+    }
+    .pillar-icon {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: rgba(61,175,106,0.15);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pillar-icon i { color: var(--green-500); }
+    .pillar-card__title { font-size: 1.25rem; font-weight: 700; color: white; margin: 1rem 0 0.5rem; }
+    .pillar-card__text  { color: rgba(255,255,255,0.65); line-height: 1.7; font-size: 0.95rem; }
+    .pillar-badge {
+      margin-top: 1.5rem;
+      background: rgba(61,175,106,0.15);
+      border: 1px solid rgba(61,175,106,0.3);
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .pillar-badge i  { color: var(--green-500); }
+    .pillar-badge span { color: var(--green-400); font-size: 0.875rem; font-weight: 600; }
+
+    /* ================================================
+       SEÇÃO 6 — COMO FUNCIONA
+    ================================================ */
+    .how { background: var(--green-50); }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 23px; top: 48px; bottom: 48px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--green-500), var(--green-100));
+    }
+    .tl-step { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .tl-num {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-600), var(--green-700));
+      color: white; font-weight: 900; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; z-index: 1;
+      box-shadow: 0 4px 16px rgba(45,134,83,0.35);
+    }
+    .tl-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      flex: 1;
+      border: 1px solid #E0EEE5;
+    }
+    .tl-card__title { font-weight: 700; color: var(--green-700); font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .tl-card__text  { color: #444; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.875rem; }
+    .tl-badge {
+      background: var(--green-100);
+      border-radius: 999px;
+      padding: 0.3rem 0.875rem;
+      display: inline-block;
+      font-size: 0.8rem; font-weight: 600; color: var(--green-700);
+    }
+    .lessons-title { font-size: clamp(1.375rem, 3vw, 2rem); font-weight: 700; margin-bottom: 1.5rem; }
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    .lesson-item {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.125rem 1.5rem;
+      border: 1px solid #E0EEE5;
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .lesson-num  { font-weight: 700; color: var(--green-600); min-width: 2.25rem; flex-shrink: 0; font-size: 0.9rem; }
+    .lesson-text { color: var(--gray-900); font-size: 0.9rem; line-height: 1.5; }
+
+    /* ================================================
+       SEÇÃO 7 — PARA QUEM É / NÃO É
+    ================================================ */
+    .for-whom { background: var(--white); }
+    .for-grid  {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .for-card { border-radius: var(--radius-card); padding: 2rem; }
+    .for-card--yes { background: var(--green-100); border: 2px solid var(--green-600); }
+    .for-card--no  { background: #FFF8F8;           border: 2px solid #FFAAAA; }
+    .for-card__hd {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.25rem; padding-bottom: 1rem;
+      font-weight: 700; font-size: 1.05rem;
+    }
+    .for-card--yes .for-card__hd { border-bottom: 1px solid rgba(45,134,83,0.2); color: var(--green-700); }
+    .for-card--no  .for-card__hd { border-bottom: 1px solid rgba(204,34,0,0.15); color: var(--red-text); }
+    .for-list { display: flex; flex-direction: column; gap: 0.875rem; }
+    .for-item { display: flex; align-items: flex-start; gap: 0.75rem; }
+    .for-item i { flex-shrink: 0; margin-top: 2px; }
+    .for-card--yes .for-item i { color: var(--green-600); }
+    .for-card--no  .for-item i { color: var(--red-text); }
+    .for-item span { font-size: 0.95rem; line-height: 1.5; color: var(--gray-900); }
+    .for-card--no .for-item span { color: var(--gray-600); }
+
+    /* ================================================
+       SEÇÃO 8 — OFERTA
+    ================================================ */
+    .offer-sec {
+      background: linear-gradient(180deg, var(--green-900), var(--green-800));
+      color: white;
+    }
+    .offer-sec .section-h { color: white; }
+    .offer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .offer-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.25rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1rem;
+      transition: background var(--transition);
+    }
+    .offer-item:hover { background: rgba(255,255,255,0.09); }
+    .offer-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(61,175,106,0.2);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .offer-icon i { color: var(--green-400); }
+    .offer-title {
+      font-weight: 700; color: white; font-size: 1rem;
+      margin-bottom: 0.25rem;
+      display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+    }
+    .offer-text { color: rgba(255,255,255,0.6); font-size: 0.875rem; line-height: 1.5; }
+    .badge {
+      font-size: 0.7rem; font-weight: 700;
+      border-radius: 4px; padding: 2px 7px;
+      background: rgba(240,192,64,0.2); color: var(--gold);
+    }
+    .offer-cta { text-align: center; }
+    .offer-trust { color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-top: 0.875rem; }
+
+    /* ================================================
+       SEÇÃO 9 — PREÇO
+    ================================================ */
+    .pricing { background: var(--white); }
+    .anchor-table {
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid #DDD;
+    }
+    .anchor-head {
+      background: #444; color: white;
+      padding: 0.875rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      font-weight: 600; font-size: 0.875rem;
+    }
+    .anchor-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      padding: 0.875rem 1.5rem;
+      font-size: 0.875rem;
+      border-top: 1px solid #EEE;
+    }
+    .anchor-row:nth-child(even) { background: #F9F9F9; }
+    .anchor-row--total { background: var(--orange-light) !important; font-weight: 700; color: var(--orange); }
+    .pricing-cards-h { text-align: center; font-size: clamp(1.375rem, 3vw, 2rem); font-weight: 700; margin-bottom: 2rem; }
+    .price-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      align-items: start;
+    }
+    .price-card { border-radius: 1.5rem; padding: 2.5rem 2rem; position: relative; }
+    .price-card--normal {
+      background: white;
+      border: 2px solid #E0EEE5;
+    }
+    .price-card--vip {
+      background: linear-gradient(160deg, var(--green-900), var(--green-700));
+      border: 2px solid var(--green-500);
+      box-shadow: 0 20px 60px rgba(26,107,60,0.4);
+      color: white;
+    }
+    .price-card__badge-top { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .price-card--normal .price-card__badge-top { color: var(--green-600); }
+    .price-card--vip    .price-card__badge-top {
+      color: var(--gold);
+      background: rgba(240,192,64,0.15);
+      display: inline-block;
+      padding: 0.3rem 0.875rem;
+      border-radius: 999px;
+    }
+    .best-seller {
+      position: absolute; top: 0; right: 0;
+      background: var(--gold); color: var(--green-800);
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 0 1.5rem 0 0.5rem;
+    }
+    .price-card__desc { font-size: 0.875rem; margin-bottom: 1.5rem; }
+    .price-card--normal .price-card__desc { color: var(--gray-600); }
+    .price-card--vip    .price-card__desc { color: rgba(255,255,255,0.7); }
+    .price-original { font-size: 1rem; text-decoration: line-through; margin-bottom: 0.25rem; }
+    .price-card--normal .price-original { color: #999; }
+    .price-card--vip    .price-original  { color: rgba(255,255,255,0.4); }
+    .price-por { font-size: 0.875rem; }
+    .price-card--normal .price-por { color: var(--gray-600); }
+    .price-card--vip    .price-por  { color: rgba(255,255,255,0.6); }
+    .price-main { font-size: 3rem; font-weight: 900; line-height: 1; margin-bottom: 0.25rem; }
+    .price-card--normal .price-main { color: var(--green-700); }
+    .price-card--vip    .price-main { color: var(--gold); }
+    .price-install { font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .price-card--normal .price-install { color: var(--gray-600); }
+    .price-card--vip    .price-install  { color: rgba(255,255,255,0.6); }
+    .price-divider { height: 1px; margin-bottom: 1.5rem; }
+    .price-card--normal .price-divider { background: #E0EEE5; }
+    .price-card--vip    .price-divider  { background: rgba(255,255,255,0.15); }
+    .price-list { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+    .price-list-item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem; line-height: 1.5; }
+    .price-card--normal .price-list-item       { color: var(--gray-900); }
+    .price-card--normal .price-list-item i     { color: var(--green-600); flex-shrink: 0; margin-top: 1px; }
+    .price-card--vip    .price-list-item       { color: rgba(255,255,255,0.85); }
+    .price-card--vip    .price-list-item i     { color: var(--gold); flex-shrink: 0; margin-top: 1px; }
+    .perspective {
+      background: var(--green-100);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .perspective__hd { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .perspective__hd i { color: var(--green-600); }
+    .perspective__title { font-weight: 700; color: var(--green-700); }
+    .perspective-list { display: flex; flex-direction: column; gap: 0.625rem; margin-bottom: 1rem; }
+    .perspective-item {
+      display: flex; gap: 0.5rem;
+      font-size: 0.9rem; color: #444; line-height: 1.5;
+    }
+    .perspective-item::before { content: '•'; color: var(--green-600); font-weight: 700; flex-shrink: 0; }
+    .perspective-conclusion { font-weight: 700; color: var(--green-700); font-size: 0.9rem; line-height: 1.5; }
+
+    /* ================================================
+       SEÇÃO 10 — CONVERSA SÉRIA
+    ================================================ */
+    .serious {
+      background: linear-gradient(160deg, var(--green-900), var(--green-700));
+      color: white;
+    }
+    .serious__inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .serious__h { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1.5rem; }
+    .serious__text { color: rgba(255,255,255,0.75); font-size: 1rem; line-height: 1.7; margin-bottom: 1rem; }
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+      text-align: left;
+    }
+    .opt-card { border-radius: 1rem; padding: 2rem; }
+    .opt-card--no  { background: rgba(204,34,0,0.12); border: 1px solid rgba(204,34,0,0.3); }
+    .opt-card--yes { background: rgba(61,175,106,0.12); border: 1px solid rgba(61,175,106,0.35); }
+    .opt-hd { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-weight: 700; font-size: 1rem; }
+    .opt-card--no  .opt-hd { color: #FF8888; }
+    .opt-card--yes .opt-hd { color: var(--green-400); }
+    .opt-text { color: rgba(255,255,255,0.65); font-size: 0.95rem; line-height: 1.7; }
+    .serious__final { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 0.875rem; }
+    .serious__note  { font-size: 0.9rem; color: rgba(255,255,255,0.5); font-style: italic; margin-bottom: 2.5rem; }
+    .serious__trust { color: rgba(255,255,255,0.45); font-size: 0.8rem; margin-top: 1rem; }
+
+    /* ================================================
+       SEÇÃO 11 — AUTORIDADE
+    ================================================ */
+    .authority { background: var(--green-50); }
+    .authority__layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .authority__photo-wrap { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    .authority__photo {
+      width: 280px; height: 340px;
+      border-radius: 1.5rem;
+      background: linear-gradient(160deg, var(--green-100), #C8E6D4);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.75rem; color: #888; font-size: 0.9rem;
+    }
+    .authority__photo i { color: var(--green-600); }
+    .authority__name { font-weight: 700; color: var(--gray-900); text-align: center; }
+    .authority__role { color: var(--green-700); font-size: 0.875rem; text-align: center; }
+    .authority__h { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; margin-bottom: 1.5rem; }
+    .authority__bio p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 1rem; }
+    .authority__link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--green-700); border: 1px solid var(--green-700);
+      padding: 0.625rem 1.5rem; border-radius: 0.5rem;
+      font-size: 0.9rem; font-weight: 600;
+      transition: all var(--transition); margin-top: 0.5rem;
+    }
+    .authority__link:hover { background: var(--green-700); color: white; }
+
+    /* ================================================
+       SEÇÃO 12 — FAQ
+    ================================================ */
+    .faq { background: var(--white); }
+    .faq__list { max-width: 760px; margin: 0 auto; }
+    .faq__item { border: 1px solid #E0EEE5; border-radius: 0.875rem; margin-bottom: 0.75rem; overflow: hidden; }
+    .faq__q {
+      width: 100%; text-align: left;
+      background: white; padding: 1.25rem 1.5rem;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      cursor: pointer; font-weight: 600; color: var(--gray-900); font-size: 0.95rem;
+      font-family: inherit; border: none; transition: background var(--transition);
+    }
+    .faq__q:hover { background: var(--green-50); }
+    .faq__chevron { color: var(--green-600); flex-shrink: 0; transition: transform 0.3s ease; }
+    .faq__item.open .faq__chevron { transform: rotate(180deg); }
+    .faq__a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease;
+      background: var(--green-50);
+      border-top: 1px solid #E0EEE5;
+    }
+    .faq__a-inner { padding: 0 1.5rem 1.5rem; color: var(--gray-600); font-size: 0.9rem; line-height: 1.7; }
+
+    /* ================================================
+       SEÇÃO 13 — FOOTER / CONTATO
+    ================================================ */
+    .footer-cta {
+      background: linear-gradient(180deg, var(--green-900), var(--green-800));
+      color: white; text-align: center;
+    }
+    .footer-cta__h   { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; margin-bottom: 1rem; }
+    .footer-cta__sub { color: rgba(255,255,255,0.65); margin-bottom: 2.5rem; }
+    .footer-cta__note { color: rgba(255,255,255,0.4); font-style: italic; font-size: 0.875rem; margin-top: 1rem; }
+    .footer-divider { border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0 2rem; }
+    .footer-info {
+      display: flex; justify-content: center; gap: 1.5rem;
+      flex-wrap: wrap; font-size: 0.8rem; color: rgba(255,255,255,0.35);
+    }
+
+    /* ================================================
+       RESPONSIVO — MOBILE FIRST
+    ================================================ */
+
+    /* ---- Pequeno (< 480px) ---- */
+    @media (max-width: 479px) {
+      .hero__headline { font-size: 1.85rem; }
+      .audience-bar { font-size: 0.72rem; padding: 0.625rem 0.75rem; }
+      .btn--lg { padding: 1.125rem 1.75rem; font-size: 0.95rem; }
+      .stats__grid { grid-template-columns: repeat(2, 1fr); }
+      .price-card { padding: 1.75rem 1.25rem; }
+      .faq__q { font-size: 0.875rem; padding: 1rem 1.125rem; }
+      .section { padding: 3.5rem 1rem; }
+    }
+
+    /* ---- Tablet pequeno (480px+) ---- */
+    @media (min-width: 480px) {
+      .hero__cta-wrap .btn--full { width: auto; }
+    }
+
+    /* ---- Tablet (640px+) ---- */
+    @media (min-width: 640px) {
+      .section { padding: 5rem 1.75rem; }
+      .options-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats__grid { grid-template-columns: repeat(2, 1fr); }
+      .price-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ---- Tablet largo (768px+) ---- */
+    @media (min-width: 768px) {
+      .section { padding: 6rem 2rem; }
+      .testi-grid   { grid-template-columns: repeat(3, 1fr); }
+      .risks-grid   { grid-template-columns: repeat(2, 1fr); }
+      .for-grid     { grid-template-columns: repeat(2, 1fr); }
+      .offer-grid   { grid-template-columns: repeat(2, 1fr); }
+      .ba-col img   { height: 380px; }
+    }
+
+    /* ---- Desktop (1024px+) ---- */
+    @media (min-width: 1024px) {
+      .section { padding: 8rem 2rem; }
+      .stats__grid { grid-template-columns: repeat(4, 1fr); }
+      .stats__item { border-bottom: none !important; }
+      .stats__item:nth-child(2n) { border-right: 1px solid rgba(255,255,255,0.15); }
+      .stats__item:last-child    { border-right: none; }
+      .pillars-grid  { grid-template-columns: repeat(3, 1fr); }
+      .price-cards   { grid-template-columns: repeat(2, 1fr); }
+      .price-card--vip { transform: scale(1.03); }
+      .timeline { flex-direction: row; align-items: flex-start; }
+      .timeline::before {
+        left: 48px; right: 48px;
+        top: 23px; bottom: auto;
+        width: auto; height: 2px;
+        background: linear-gradient(to right, var(--green-500), var(--green-100));
+      }
+      .tl-step { flex-direction: column; align-items: center; flex: 1; text-align: center; }
+    }
+
+    /* ---- Desktop largo (1280px+) ---- */
+    @media (min-width: 1280px) {
+      :root { --container: 1200px; }
+    }
+
+    /* ---- Touch: desabilita hover para evitar estado preso ---- */
+    @media (hover: none) {
+      .testi-card:hover { transform: none; box-shadow: var(--shadow-card); }
+      .btn--primary:hover { transform: none; }
+      .btn--gold:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA DE PROGRESSO -->
+  <div id="progress-bar" role="progressbar" aria-label="Progresso de leitura"></div>
+
+
+  <main>
+
+    <!-- ================================================
+         TARJA DE AUDIÊNCIA
+    ================================================ -->
+    <div class="audience-bar" role="note">
+      EXCLUSIVO PARA QUEM USA MOUNJARO, OZEMPIC OU OUTRO GLP-1 E QUER ACELERAR SEUS RESULTADOS
+    </div>
+
+    <!-- ================================================
+         SEÇÃO 1 — HERO
+    ================================================ -->
+    <section class="hero" aria-label="Apresentação do Protocolo Mounjaro">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__content">
+
+        <div class="tag tag--green anim">
+          <span>✦</span> PROTOCOLO ESPECÍFICO PARA GLP-1
+        </div>
+
+        <h1 class="hero__headline anim">
+          Emagreça <span class="gt">3 vezes mais rápido</span><br>
+          através do Protocolo de Treino e Dieta<br>
+          Feito para Quem Usa <span class="gt">Caneta Emagrecedora</span>
+        </h1>
+
+        <p class="hero__subtitle anim">
+          A caneta controla a fome. O Protocolo acelera e consolida seu resultado.
+          Descubra como parar de desperdiçar o potencial do seu tratamento —
+          e garantir que tudo que você conquistar... <strong style="color:rgba(255,255,255,0.9)">fique para sempre.</strong>
+        </p>
+
+        <div class="hero__cta-wrap anim">
+          <a href="#pricing" class="btn btn--primary btn--lg btn--full" aria-label="Entrar no Protocolo Mounjaro agora">
+            ▶ QUERO ENTRAR NO PROTOCOLO AGORA <span class="arrow">→</span>
+          </a>
+          <p class="hero__trust">🔒 Pagamento seguro · ✅ Garantia incondicional · ⚡ Acesso imediato</p>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <i data-lucide="chevron-down" class="icon-lg"></i>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SEÇÃO 2 — NÚMEROS / STATS
+    ================================================ -->
+    <section class="stats" aria-label="Resultados do Protocolo em números">
+      <div class="stats__grid">
+        <div class="stats__item anim">
+          <div class="stats__number" data-target="1200" data-prefix="+" data-suffix="">+<span class="ph">[X]</span></div>
+          <div class="stats__label">mulheres no protocolo</div>
+        </div>
+        <div class="stats__item anim">
+          <div class="stats__number" data-target="94" data-prefix="" data-suffix="%"><span class="ph">[X]</span>%</div>
+          <div class="stats__label">relatam melhora em 8 semanas</div>
+        </div>
+        <div class="stats__item anim">
+          <div class="stats__number" data-target="8.5" data-prefix="" data-suffix="kg" data-decimal="true"><span class="ph">[X]</span>kg</div>
+          <div class="stats__label">média de perda em 90 dias</div>
+        </div>
+        <div class="stats__item anim">
+          <div class="stats__number" data-target="3" data-prefix="" data-suffix="x"><span class="ph">[X]</span>x</div>
+          <div class="stats__label">mais resultado vs. caneta sozinha</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SEÇÃO 3 — PROVA SOCIAL
+    ================================================ -->
+    <section class="social-proof section" aria-label="Depoimentos de participantes">
+      <div class="container">
+        <div class="section-tag anim"><span class="tag tag--green">RESULTADOS REAIS</span></div>
+        <h2 class="section-h anim">Elas usavam a caneta. Adicionaram o protocolo.<br>Os resultados falam por si.</h2>
+
+        <div class="testi-grid">
+
+          <article class="testi-card anim" aria-label="Depoimento de Ana Clara Ferreira">
+            <div class="testi-top">
+              <div class="testi-avatar" aria-hidden="true">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Clara Ferreira" loading="lazy" decoding="async" width="56" height="56">
+              </div>
+              <div>
+                <div class="testi-name">Ana Clara Ferreira</div>
+                <div class="testi-meta">34 anos · São Paulo · SP</div>
+                <div class="testi-stars" aria-label="5 estrelas">★★★★★</div>
+              </div>
+            </div>
+            <span class="testi-quote" aria-hidden="true">"</span>
+            <p class="testi-text">
+              Estava usando o Mounjaro há 3 meses e emagrecendo devagar. Com o protocolo do Dolly,
+              nos primeiros 45 dias perdi 9kg e, pela primeira vez, o corpo ficou tonificado.
+              Não só "magra" — realmente transformado.
+            </p>
+            <div class="testi-badge">Resultado: -12kg em 60 dias</div>
+          </article>
+
+          <article class="testi-card anim" aria-label="Depoimento de Mariana Santos">
+            <div class="testi-top">
+              <div class="testi-avatar" aria-hidden="true">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Mariana Santos" loading="lazy" decoding="async" width="56" height="56">
+              </div>
+              <div>
+                <div class="testi-name">Mariana Santos</div>
+                <div class="testi-meta">41 anos · Belo Horizonte · MG</div>
+                <div class="testi-stars" aria-label="5 estrelas">★★★★★</div>
+              </div>
+            </div>
+            <span class="testi-quote" aria-hidden="true">"</span>
+            <p class="testi-text">
+              O meu maior medo era parar a caneta e recuperar tudo. O protocolo me ensinou a comer
+              e treinar do jeito certo. Quando fui reduzindo a dose, o corpo não voltou. Fiquei.
+            </p>
+            <div class="testi-badge">Resultado: manutenção 6 meses pós-tratamento</div>
+          </article>
+
+          <article class="testi-card anim" aria-label="Depoimento de Juliana Costa">
+            <div class="testi-top">
+              <div class="testi-avatar" aria-hidden="true">
+                <img src="https://randomuser.me/api/portraits/women/31.jpg" alt="Juliana Costa" loading="lazy" decoding="async" width="56" height="56">
+              </div>
+              <div>
+                <div class="testi-name">Juliana Costa</div>
+                <div class="testi-meta">28 anos · Rio de Janeiro · RJ</div>
+                <div class="testi-stars" aria-label="5 estrelas">★★★★★</div>
+              </div>
+            </div>
+            <span class="testi-quote" aria-hidden="true">"</span>
+            <p class="testi-text">
+              Eu nem sabia que estava perdendo músculo junto com gordura. O Dolly mudou completamente
+              meu treino. Em 60 dias meu corpo mudou mais do que nos 6 meses anteriores.
+            </p>
+            <div class="testi-badge">Resultado: -3 tamanhos de roupa</div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================
+         SEÇÃO 4 — DOR / PROBLEMA
+    ================================================ -->
+    <section class="problem section" aria-label="O problema com GLP-1 sem protocolo">
+      <div class="container" style="max-width:800px;">
+        <div class="section-tag anim"><span class="tag tag--red">O PROBLEMA</span></div>
+        <h2 class="section-h anim">Se você usa Caneta Emagrecedora sozinha sem um protocolo de dieta e exercícios, preste atenção...</h2>
+
+        <p class="problem-narrative anim">Você acordou para o potencial do Mounjaro. Investiu no tratamento. Está vendo resultados.</p>
+        <p class="problem-narrative anim">Mas algo não fecha.</p>
+        <p class="problem-narrative anim">
+          Talvez você esteja emagrecendo mais devagar do que esperava. Ou o corpo não está ficando do
+          jeito que você imaginou — apenas "menor", não tonificado. Ou você olha para o futuro e pensa:
+        </p>
+
+        <blockquote class="problem-quote anim">
+          "Quando eu parar ou reduzir a caneta... vai tudo voltar?"
+        </blockquote>
+
+        <p class="problem-narrative anim">Você não está errada em sentir isso. E não é culpa sua.</p>
+        <p class="problem-narrative anim">
+          O Mounjaro faz a parte dele — controla a fome, melhora a sensibilidade à insulina. Mas a caneta
+          não escolhe o que você come. Não preserva seu músculo. Não constrói os hábitos que vão sustentar o resultado.
+        </p>
+
+        <h3 class="risks-h anim">O que acontece quando você usa GLP-1 sem protocolo:</h3>
+
+        <div class="risks-grid">
+          <div class="risk-card anim">
+            <div class="risk-card__hd">
+              <i data-lucide="x-circle" class="icon-lg"></i>
+              <h4 class="risk-card__title">Perda de massa muscular</h4>
+            </div>
+            <p class="risk-card__text">
+              Sem treino de força específico, seu corpo cataboliza músculo junto com gordura. Isso emagrece a
+              balança — mas deixa o metabolismo mais lento e o corpo flácido.
+            </p>
+          </div>
+          <div class="risk-card anim">
+            <div class="risk-card__hd">
+              <i data-lucide="x-circle" class="icon-lg"></i>
+              <h4 class="risk-card__title">Efeito sanfona garantido</h4>
+            </div>
+            <p class="risk-card__text">
+              Sem construir novos hábitos durante o tratamento, quando o apetite voltar ao normal, você volta
+              de onde veio. Ou pior: com o metabolismo mais lento do que antes.
+            </p>
+          </div>
+          <div class="risk-card anim">
+            <div class="risk-card__hd">
+              <i data-lucide="x-circle" class="icon-lg"></i>
+              <h4 class="risk-card__title">Investimento desperdiçado</h4>
+            </div>
+            <p class="risk-card__text">
+              Você paga entre R$800 e R$3.000 por mês na caneta. Sem protocolo, aproveita uma fração do
+              resultado possível. É como pagar por uma academia premium e só aparecer uma vez por mês.
+            </p>
+          </div>
+          <div class="risk-card anim">
+            <div class="risk-card__hd">
+              <i data-lucide="x-circle" class="icon-lg"></i>
+              <h4 class="risk-card__title">Janela perdida para sempre</h4>
+            </div>
+            <p class="risk-card__text">
+              O período de apetite reduzido é o momento mais fácil da vida para criar novos hábitos. Sem um
+              protocolo, essa janela fecha — e não volta.
+            </p>
+          </div>
+        </div>
+
+        <div class="solution-teaser anim">
+          <i data-lucide="check-circle" class="icon-lg"></i>
+          <p>
+            A solução é mais simples do que você imagina. Não é dieta restritiva. Não é 2 horas na academia.
+            É um protocolo único montado por quem entende de GLP-1 — que trabalha <em>junto</em> com o que a caneta já faz.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SEÇÃO 5 — SOLUÇÃO (3 PILARES)
+    ================================================ -->
+    <section class="solution-sec section" aria-label="Os 3 pilares do Protocolo Mounjaro">
+      <div class="container">
+        <div class="section-tag anim"><span class="tag tag--green">A SOLUÇÃO</span></div>
+        <h2 class="section-h anim">3 pilares que trabalham juntos para multiplicar seus resultados</h2>
+        <p class="section-sub anim">Não é dieta + treino genérico. É um sistema construído especificamente para quem usa GLP-1.</p>
+
+        <div class="pillars-grid">
+
+          <article class="pillar-card anim" aria-label="Pilar 1: Treino Antiperda Muscular">
+            <div class="pillar-card__num" aria-hidden="true">1</div>
+            <div class="pillar-icon"><i data-lucide="dumbbell" class="icon-md"></i></div>
+            <h3 class="pillar-card__title">Treino Antiperda Muscular</h3>
+            <p class="pillar-card__text">
+              Enquanto a caneta reduz sua fome, seu corpo precisa de um sinal claro de que o músculo é necessário —
+              senão ele cataboliza. O protocolo de treino do Dolly preserva e potencializa massa magra durante o uso de GLP-1.
+            </p>
+            <div class="pillar-badge">
+              <i data-lucide="arrow-right" class="icon-xs"></i>
+              <span>Você perde gordura, não músculo</span>
+            </div>
+          </article>
+
+          <article class="pillar-card anim" aria-label="Pilar 2: Alimentação Alinhada ao Ciclo do GLP-1">
+            <div class="pillar-card__num" aria-hidden="true">2</div>
+            <div class="pillar-icon"><i data-lucide="utensils-crossed" class="icon-md"></i></div>
+            <h3 class="pillar-card__title">Alimentação Alinhada ao Ciclo do GLP-1</h3>
+            <p class="pillar-card__text">
+              O Mounjaro não reduz o apetite de forma linear. Um plano alimentar genérico falha exatamente quando
+              você mais precisa. O protocolo nutricional é calibrado para funcionar nos altos e baixos do tratamento.
+            </p>
+            <div class="pillar-badge">
+              <i data-lucide="arrow-right" class="icon-xs"></i>
+              <span>Nutrição perfeita sem sofrimento</span>
+            </div>
+          </article>
+
+          <article class="pillar-card anim" aria-label="Pilar 3: Sustentabilidade Pós-Caneta">
+            <div class="pillar-card__num" aria-hidden="true">3</div>
+            <div class="pillar-icon"><i data-lucide="shield-check" class="icon-md"></i></div>
+            <h3 class="pillar-card__title">Sustentabilidade Pós-Caneta</h3>
+            <p class="pillar-card__text">
+              O período de apetite reduzido é o momento mais fácil da vida para criar novos hábitos. O protocolo
+              usa isso estrategicamente para construir uma base que dura quando o GLP-1 for reduzido ou encerrado.
+            </p>
+            <div class="pillar-badge">
+              <i data-lucide="arrow-right" class="icon-xs"></i>
+              <span>Resultados que não dependem da caneta</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SEÇÃO 6 — COMO FUNCIONA
+    ================================================ -->
+    <section class="how section" aria-label="Como funciona o Protocolo na prática">
+      <div class="container">
+        <div class="section-tag anim"><span class="tag tag--green" style="color:var(--green-700); background:rgba(45,134,83,0.12); border-color:rgba(45,134,83,0.3);">COMO FUNCIONA</span></div>
+        <h2 class="section-h anim">Como funciona o Protocolo na prática</h2>
+
+        <div class="timeline">
+
+          <div class="tl-step anim">
+            <div class="tl-num">1</div>
+            <div class="tl-card">
+              <h3 class="tl-card__title">Semana de Diagnóstico e Montagem Individual</h3>
+              <p class="tl-card__text">
+                Sua primeira semana é de personalização total. O Dolly avalia seu histórico, tratamento
+                atual e objetivos para montar o protocolo feito especificamente para você.
+              </p>
+              <span class="tl-badge">Plano de treino + Plano alimentar personalizados</span>
+            </div>
+          </div>
+
+          <div class="tl-step anim">
+            <div class="tl-num">2</div>
+            <div class="tl-card">
+              <h3 class="tl-card__title">Acompanhamento Semanal com a Personal Dolly</h3>
+              <p class="tl-card__text">
+                Toda semana, sessão de acompanhamento com a Personal Dolly para revisar o protocolo,
+                ajustar o que for necessário e tirar dúvidas. Com gravações disponíveis para assistir
+                quando quiser.
+              </p>
+              <span class="tl-badge">Gravações disponíveis a qualquer momento</span>
+            </div>
+          </div>
+
+          <div class="tl-step anim">
+            <div class="tl-num">3</div>
+            <div class="tl-card">
+              <h3 class="tl-card__title">Suporte Individual por WhatsApp</h3>
+              <p class="tl-card__text">
+                Dúvida no meio da semana? Comeu algo diferente? O Dolly e sua equipe estão disponíveis
+                para suporte direto durante todo o programa.
+              </p>
+              <span class="tl-badge">Resposta em até <span class="ph">[X]</span> horas nos dias úteis</span>
+            </div>
+          </div>
+
+          <div class="tl-step anim">
+            <div class="tl-num">4</div>
+            <div class="tl-card">
+              <h3 class="tl-card__title">Protocolo de Transição Pós-Caneta</h3>
+              <p class="tl-card__text">
+                Na reta final, você recebe o protocolo estruturado de transição: como ajustar treino e
+                alimentação conforme a dose de GLP-1 é reduzida.
+              </p>
+              <span class="tl-badge">Para que o resultado seja seu — não da caneta</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================
+         SEÇÃO 7 — PARA QUEM É / NÃO É
+    ================================================ -->
+    <section class="for-whom section" aria-label="Perfil ideal do Protocolo Mounjaro">
+      <div class="container">
+        <div class="section-tag anim"><span class="tag tag--green" style="color:var(--green-700); background:rgba(45,134,83,0.12); border-color:rgba(45,134,83,0.3);">PERFIL IDEAL</span></div>
+        <h2 class="section-h anim">Clareza antes de qualquer decisão.</h2>
+        <p class="section-sub anim">O Protocolo Mounjaro não é para todo mundo. E foi assim que foi desenhado — para funcionar com quem realmente está pronto.</p>
+
+        <div class="for-grid">
+
+          <div class="for-card for-card--yes anim" aria-label="Protocolo é para você se...">
+            <div class="for-card__hd">
+              <i data-lucide="check-circle" class="icon-lg"></i>
+              <span>ESTE PROTOCOLO É PARA VOCÊ SE:</span>
+            </div>
+            <ul class="for-list">
+              <li class="for-item"><i data-lucide="check" class="icon-sm"></i><span>Você usa ou vai iniciar Mounjaro, Ozempic ou outro GLP-1 com prescrição médica</span></li>
+              <li class="for-item"><i data-lucide="check" class="icon-sm"></i><span>Quer maximizar os resultados do tratamento — e não deixar resultado na mesa</span></li>
+              <li class="for-item"><i data-lucide="check" class="icon-sm"></i><span>Tem medo de recuperar o peso quando parar ou reduzir a caneta</span></li>
+              <li class="for-item"><i data-lucide="check" class="icon-sm"></i><span>Está emagrecendo mas o corpo não está ficando como imaginou — menos tonificado do que gostaria</span></li>
+              <li class="for-item"><i data-lucide="check" class="icon-sm"></i><span>Sabe que precisa de treino e dieta, mas não tem um plano específico para GLP-1</span></li>
+              <li class="for-item"><i data-lucide="check" class="icon-sm"></i><span>Quer comprometimento real com uma transformação que dure — não uma solução temporária</span></li>
+            </ul>
+          </div>
+
+          <div class="for-card for-card--no anim" aria-label="Protocolo não é para você se...">
+            <div class="for-card__hd">
+              <i data-lucide="x-circle" class="icon-lg"></i>
+              <span>NÃO É PARA VOCÊ SE:</span>
+            </div>
+            <ul class="for-list">
+              <li class="for-item"><i data-lucide="x" class="icon-sm"></i><span>Busca uma solução mágica que funcione sem nenhuma mudança de hábito</span></li>
+              <li class="for-item"><i data-lucide="x" class="icon-sm"></i><span>Não usa e não pretende usar GLP-1 no tratamento</span></li>
+              <li class="for-item"><i data-lucide="x" class="icon-sm"></i><span>Não está disposta a seguir o protocolo semanalmente com acompanhamento</span></li>
+              <li class="for-item"><i data-lucide="x" class="icon-sm"></i><span>Quer resultado imediato sem comprometimento com o processo</span></li>
+              <li class="for-item"><i data-lucide="x" class="icon-sm"></i><span>Já tem acompanhamento de personal e nutricionista especializados em GLP-1 e está satisfeita</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SEÇÃO 8 — RESUMO DA OFERTA
+    ================================================ -->
+    <section class="offer-sec section" aria-label="O que você recebe no Protocolo Mounjaro">
+      <div class="container">
+        <div class="section-tag anim"><span class="tag tag--gold">O QUE VOCÊ RECEBE</span></div>
+        <h2 class="section-h anim">Tudo que você recebe ao entrar no Protocolo:</h2>
+
+        <div class="offer-grid">
+
+          <div class="offer-item anim">
+            <div class="offer-icon"><i data-lucide="dumbbell" class="icon-md"></i></div>
+            <div>
+              <div class="offer-title">Programa de Treinamento Individual Específico para GLP-1</div>
+              <p class="offer-text">Montado pela Personal Dolly com base no seu histórico e tratamento. Nenhum programa igual ao do outro.</p>
+            </div>
+          </div>
+
+          <div class="offer-item anim">
+            <div class="offer-icon"><i data-lucide="utensils" class="icon-md"></i></div>
+            <div>
+              <div class="offer-title">Plano Alimentar Individualizado</div>
+              <p class="offer-text">Desenvolvido em parceria com nutricionistas, alinhado aos ciclos de apetite do Mounjaro e ao protocolo de treino.</p>
+            </div>
+          </div>
+
+          <div class="offer-item anim">
+            <div class="offer-icon"><i data-lucide="video" class="icon-md"></i></div>
+            <div>
+              <div class="offer-title">Acompanhamento Semanal com a Personal Dolly</div>
+              <p class="offer-text">Sessões semanais de revisão, ajustes contínuos e suporte humano em cada etapa. Gravações disponíveis para acessar quando quiser.</p>
+            </div>
+          </div>
+
+          <div class="offer-item anim">
+            <div class="offer-icon"><i data-lucide="message-circle" class="icon-md"></i></div>
+            <div>
+              <div class="offer-title">Suporte Individual por WhatsApp</div>
+              <p class="offer-text">Contato direto com o Dolly para dúvidas, ajustes e motivação quando você precisar.</p>
+            </div>
+          </div>
+
+          <div class="offer-item anim">
+            <div class="offer-icon"><i data-lucide="shield-check" class="icon-md"></i></div>
+            <div>
+              <div class="offer-title">Protocolo de Transição Pós-Caneta</div>
+              <p class="offer-text">O plano estruturado para manter os resultados quando o tratamento for reduzido ou encerrado.</p>
+            </div>
+          </div>
+
+          <div class="offer-item anim">
+            <div class="offer-icon"><i data-lucide="play-circle" class="icon-md"></i></div>
+            <div>
+              <div class="offer-title">
+                Acesso às Gravações de Todas as Aulas
+                <span class="badge">BÔNUS</span>
+              </div>
+              <p class="offer-text">Para assistir quando quiser, no seu ritmo.</p>
+            </div>
+          </div>
+
+          <div class="offer-item anim" style="grid-column: 1 / -1;">
+            <div class="offer-icon"><i data-lucide="star" class="icon-md"></i></div>
+            <div>
+              <div class="offer-title">
+                Consulta Individual 1:1 com o Dolly
+                <span class="badge">VIP</span>
+              </div>
+              <p class="offer-text">Videochamada individual para revisão do protocolo. Exclusivo para o ingresso VIP.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="offer-cta anim">
+          <a href="#pricing" class="btn btn--primary btn--lg" aria-label="Garantir vaga no Protocolo Mounjaro">
+            ▶ GARANTIR MINHA VAGA AGORA <span class="arrow">→</span>
+          </a>
+          <p class="offer-trust">🔒 Pagamento seguro · Garantia incondicional · Acesso imediato</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SEÇÃO 9 — PREÇO
+    ================================================ -->
+    <section class="pricing section" id="pricing" aria-label="Investimento no Protocolo Mounjaro">
+      <div class="container">
+        <div class="section-tag anim"><span class="tag tag--green" style="color:var(--green-700); background:rgba(45,134,83,0.12); border-color:rgba(45,134,83,0.3);">INVESTIMENTO</span></div>
+        <h2 class="section-h anim">O Investimento</h2>
+
+        <h3 class="pricing-cards-h anim">Escolha o seu plano:</h3>
+
+        <div class="price-cards">
+
+          <!-- CARD NORMAL -->
+          <div class="price-card price-card--normal anim" aria-label="Protocolo Mounjaro - Ingresso Normal">
+            <div class="price-card__badge-top">PROTOCOLO MOUNJARO</div>
+            <p class="price-card__desc">Programa de <span class="ph">[3/6]</span> meses · Acesso completo</p>
+            <p class="price-original">De <span class="ph">R$ [VALOR ORIGINAL]</span></p>
+            <p class="price-por">por apenas</p>
+            <div class="price-main"><span class="ph">R$ [VALOR]</span></div>
+            <p class="price-install">ou <span class="ph">12x de R$ [VALOR/MÊS]</span></p>
+            <div class="price-divider"></div>
+            <ul class="price-list">
+              <li class="price-list-item"><i data-lucide="check" class="icon-sm"></i>Plano de treino individualizado</li>
+              <li class="price-list-item"><i data-lucide="check" class="icon-sm"></i>Plano alimentar individualizado</li>
+              <li class="price-list-item"><i data-lucide="check" class="icon-sm"></i>Encontros ao vivo semanais</li>
+              <li class="price-list-item"><i data-lucide="check" class="icon-sm"></i>Suporte por WhatsApp</li>
+              <li class="price-list-item"><i data-lucide="check" class="icon-sm"></i>Protocolo de transição pós-caneta</li>
+            </ul>
+            <a href="#" class="btn btn--primary btn--full" aria-label="Entrar no Protocolo Mounjaro agora">
+              ▶ QUERO PLANO NORMAL <span class="arrow">→</span>
+            </a>
+          </div>
+
+          <!-- CARD VIP -->
+          <div class="price-card price-card--vip anim" aria-label="Protocolo Mounjaro VIP - Mais vendido">
+            <span class="best-seller">MAIS VENDIDO</span>
+            <div class="price-card__badge-top">⭐ PROTOCOLO VIP</div>
+            <p class="price-card__desc">Programa de <span class="ph">[3/6]</span> meses · Acesso completo + exclusivos VIP</p>
+            <p class="price-original">De <span class="ph">R$ [VALOR ORIGINAL VIP]</span></p>
+            <p class="price-por">por apenas</p>
+            <div class="price-main"><span class="ph">R$ [VALOR VIP]</span></div>
+            <p class="price-install">ou <span class="ph">12x de R$ [VALOR VIP/MÊS]</span></p>
+            <div class="price-divider"></div>
+            <ul class="price-list">
+              <li class="price-list-item"><i data-lucide="check" class="icon-sm"></i>Tudo do Protocolo Normal</li>
+              <li class="price-list-item"><i data-lucide="check" class="icon-sm"></i>Consulta individual mensal 1:1 com o Dolly</li>
+              <li class="price-list-item"><i data-lucide="check" class="icon-sm"></i>Acesso prioritário ao WhatsApp (<span class="ph">[X]</span>h de resposta)</li>
+              <li class="price-list-item"><i data-lucide="check" class="icon-sm"></i>Revisão individual semanal do protocolo</li>
+              <li class="price-list-item"><i data-lucide="check" class="icon-sm"></i>Acesso antecipado a novos materiais</li>
+            </ul>
+            <a href="#" class="btn btn--gold btn--full" aria-label="Garantir o Protocolo VIP agora">
+              ▶ QUERO PLANO VIP <span class="arrow">→</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Perspectiva de custo-benefício -->
+        <div class="perspective anim">
+          <div class="perspective__hd">
+            <i data-lucide="lightbulb" class="icon-md"></i>
+            <span class="perspective__title">Para colocar em perspectiva:</span>
+          </div>
+          <ul class="perspective-list">
+            <li class="perspective-item">É menos do que 2 meses de academia com personal trainer convencional</li>
+            <li class="perspective-item">Equivale a menos de 3 semanas dos seus deliveries de alimentação saudável</li>
+            <li class="perspective-item">É uma fração do que você já investe na caneta — e vai fazer esse investimento render 2 a 3× mais</li>
+          </ul>
+          <p class="perspective-conclusion">A diferença: esses outros gastos não se acumulam. O protocolo, sim.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================
+         SEÇÃO 10 — CONVERSA SÉRIA
+    ================================================ -->
+    <section class="serious section" aria-label="Uma conversa franca sobre sua decisão">
+      <div class="serious__inner container">
+
+        <h2 class="serious__h anim">Preciso ser direto com você.</h2>
+
+        <p class="serious__text anim">
+          Você chegou até aqui porque algo te trouxe — uma dúvida, um medo, uma frustração silenciosa
+          com o que está vendo até agora com o tratamento.
+        </p>
+        <p class="serious__text anim">Você tem duas opções agora.</p>
+
+        <div class="options-grid">
+
+          <div class="opt-card opt-card--no anim" aria-label="Opção 1: Continuar como está">
+            <div class="opt-hd">
+              <i data-lucide="x-circle" class="icon-md"></i>
+              Opção 1: Continuar como está
+            </div>
+            <p class="opt-text">
+              Continuar pagando o que já paga na caneta, sem saber se está aproveitando ao máximo.
+              Com o medo de que, quando o tratamento acabar, o peso volte. Com o corpo mudando
+              menos do que você sabia que era possível.
+            </p>
+          </div>
+
+          <div class="opt-card opt-card--yes anim" aria-label="Opção 2: Entrar no Protocolo">
+            <div class="opt-hd">
+              <i data-lucide="check-circle" class="icon-md"></i>
+              Opção 2: Entrar no Protocolo
+            </div>
+            <p class="opt-text">
+              Ter um plano de treino e alimentação feito especificamente para o seu tratamento. Saber
+              que cada semana você está construindo algo que vai durar — com ou sem a caneta.
+            </p>
+          </div>
+
+        </div>
+
+        <p class="serious__final anim">A decisão é sua. Mas agora você tem os dois caminhos com clareza.</p>
+        <p class="serious__note anim">
+          "Eu já vi centenas de usuárias de GLP-1 na Opção 1. Algumas voltam meses depois.
+          Outras não voltam nunca — e ficam no mesmo lugar."
+        </p>
+
+        <div class="anim">
+          <a href="#pricing" class="btn btn--primary btn--lg" aria-label="Fazer diferente desta vez">
+            ▶ QUERO FAZER DIFERENTE DESTA VEZ <span class="arrow">→</span>
+          </a>
+          <p class="serious__trust">🔒 Garantia incondicional · Pagamento seguro · Acesso imediato</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================
+         SEÇÃO 12 — FAQ
+    ================================================ -->
+    <section class="faq section" aria-label="Perguntas frequentes sobre o Protocolo Mounjaro">
+      <div class="container">
+        <div class="section-tag anim"><span class="tag tag--green" style="color:var(--green-700); background:rgba(45,134,83,0.12); border-color:rgba(45,134,83,0.3);">PERGUNTAS FREQUENTES</span></div>
+        <h2 class="section-h anim">Perguntas que aparecem com frequência</h2>
+
+        <div class="faq__list anim">
+
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">
+              Preciso usar Mounjaro para entrar no protocolo?
+              <i data-lucide="chevron-down" class="faq__chevron icon-sm"></i>
+            </button>
+            <div class="faq__a" role="region">
+              <div class="faq__a-inner">
+                Sim. O protocolo é desenhado especificamente para quem está em tratamento com GLP-1 — Mounjaro,
+                Ozempic, Wegovy ou similar. Se você ainda não iniciou mas tem prescrição e data de início definida,
+                entre em contato antes de comprar para avaliarmos juntos.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">
+              O que diferencia esse protocolo de um treino e dieta convencional?
+              <i data-lucide="chevron-down" class="faq__chevron icon-sm"></i>
+            </button>
+            <div class="faq__a" role="region">
+              <div class="faq__a-inner">
+                Tudo. Um plano convencional não considera os ciclos de apetite do GLP-1, não tem estratégia
+                de preservação muscular para quem está em deficit calórico induzido por medicamento, e não
+                inclui protocolo de transição. É como a diferença entre uma roupa padrão e uma feita sob medida.
+                Uma serve. A outra encaixa.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">
+              Já tenho acompanhamento médico. O protocolo substitui ou complementa?
+              <i data-lucide="chevron-down" class="faq__chevron icon-sm"></i>
+            </button>
+            <div class="faq__a" role="region">
+              <div class="faq__a-inner">
+                Complementa — e os dois são fundamentais. Seu médico cuida do tratamento farmacológico.
+                O Protocolo cuida do treino e da nutrição. A maioria dos médicos prescritores de GLP-1 não
+                tem expertise para montar protocolos de exercício e alimentação específicos para o contexto
+                do medicamento.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">
+              Em quanto tempo verei resultados?
+              <i data-lucide="chevron-down" class="faq__chevron icon-sm"></i>
+            </button>
+            <div class="faq__a" role="region">
+              <div class="faq__a-inner">
+                A maioria das participantes relata diferença visível na composição corporal nas primeiras 6 a 8
+                semanas. Mas o diferencial do protocolo é que os resultados são progressivos e sustentáveis —
+                não um pico rápido que desaparece. Você sai com um corpo diferente e com hábitos que mantêm
+                esse resultado.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">
+              Preciso seguir um horário fixo ou posso acessar no meu ritmo?
+              <i data-lucide="chevron-down" class="faq__chevron icon-sm"></i>
+            </button>
+            <div class="faq__a" role="region">
+              <div class="faq__a-inner">
+                O protocolo é flexível: todas as sessões de acompanhamento são gravadas e ficam disponíveis
+                para você acessar quando quiser. O suporte por WhatsApp garante que você nunca fique sem
+                resposta, independente da sua rotina.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">
+              O protocolo funciona para quem está começando ou só para quem já usa há tempo?
+              <i data-lucide="chevron-down" class="faq__chevron icon-sm"></i>
+            </button>
+            <div class="faq__a" role="region">
+              <div class="faq__a-inner">
+                Para os dois momentos — mas a recomendação é começar o mais cedo possível no tratamento.
+                Quanto mais cedo você tiver o protocolo, mais aproveita a janela metabólica que o GLP-1 abre.
+                Resultados expressivos foram obtidos em todas as fases do tratamento.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">
+              Existe garantia?
+              <i data-lucide="chevron-down" class="faq__chevron icon-sm"></i>
+            </button>
+            <div class="faq__a" role="region">
+              <div class="faq__a-inner">
+                Sim. Se nos primeiros 7 dias você acessar o material, participar do encontro
+                inicial e sentir que o protocolo não é o que precisava, devolvemos 100% do valor investido.
+                Sem burocracia, sem perguntas. Porque confiança funciona nos dois sentidos.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // ================================================
+    // INICIALIZAÇÃO
+    // ================================================
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // 1. Inicializar ícones Lucide
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+
+      // ------------------------------------------------
+      // 2. Barra de progresso + Header scroll
+      // ------------------------------------------------
+      const progressBar = document.getElementById('progress-bar');
+
+      window.addEventListener('scroll', function () {
+        // Progresso de leitura
+        const scrollTop  = window.scrollY;
+        const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+        const pct        = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = pct + '%';
+      }, { passive: true });
+
+      // ------------------------------------------------
+      // 3. IntersectionObserver — animações de entrada
+      // ------------------------------------------------
+      const animEls = document.querySelectorAll('.anim');
+
+      // Agrupa elementos irmãos para stagger delay
+      const groups = {};
+      animEls.forEach(function (el) {
+        const parent = el.parentElement;
+        if (!parent) return;
+        const key = parent.dataset.animGroup || (parent.dataset.animGroup = 'g' + Math.random());
+        if (!groups[key]) groups[key] = [];
+        groups[key].push(el);
+      });
+
+      Object.values(groups).forEach(function (siblings) {
+        if (siblings.length > 1) {
+          siblings.forEach(function (el, i) {
+            el.style.transitionDelay = (i * 0.1) + 's';
+          });
+        }
+      });
+
+      const ioObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            ioObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      animEls.forEach(function (el) { ioObserver.observe(el); });
+
+      // ------------------------------------------------
+      // 4. Contador de stats (easeOutCubic)
+      // ------------------------------------------------
+      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+      function animateCounter(el) {
+        const target   = parseFloat(el.dataset.target) || 0;
+        const prefix   = el.dataset.prefix  || '';
+        const suffix   = el.dataset.suffix  || '';
+        const isDecimal = el.dataset.decimal === 'true';
+        const duration  = 1500;
+        const startTime = performance.now();
+
+        function update(now) {
+          const elapsed  = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased    = easeOutCubic(progress);
+          const current  = target * eased;
+
+          let display;
+          if (isDecimal) {
+            display = current.toFixed(1).replace('.', ',');
+          } else {
+            display = Math.round(current).toLocaleString('pt-BR');
+          }
+
+          el.textContent = prefix + display + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        }
+        requestAnimationFrame(update);
+      }
+
+      const statsSection   = document.querySelector('.stats');
+      const statsNumbers   = document.querySelectorAll('.stats__number[data-target]');
+      let   countersStarted = false;
+
+      if (statsSection && statsNumbers.length) {
+        const statsIO = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting && !countersStarted) {
+            countersStarted = true;
+            statsNumbers.forEach(animateCounter);
+          }
+        }, { threshold: 0.4 });
+        statsIO.observe(statsSection);
+      }
+
+      // ------------------------------------------------
+      // 5. FAQ accordion
+      // ------------------------------------------------
+      const faqItems = document.querySelectorAll('.faq__item');
+
+      faqItems.forEach(function (item) {
+        const btn    = item.querySelector('.faq__q');
+        const answer = item.querySelector('.faq__a');
+
+        btn.addEventListener('click', function () {
+          const isOpen = item.classList.contains('open');
+
+          // Fechar todos
+          faqItems.forEach(function (i) {
+            i.classList.remove('open');
+            i.querySelector('.faq__a').style.maxHeight = '0';
+            i.querySelector('.faq__q').setAttribute('aria-expanded', 'false');
+          });
+
+          // Abrir o clicado (se estava fechado)
+          if (!isOpen) {
+            item.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // ------------------------------------------------
+      // 6. Scroll suave com offset do header
+      // ------------------------------------------------
+      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          const targetId = link.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+          const target = document.querySelector(targetId);
+          if (!target) return;
+          e.preventDefault();
+          const headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 64;
+          const top     = target.getBoundingClientRect().top + window.scrollY - headerH - 16;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        });
+      });
+
+    }); // DOMContentLoaded
+  </script>
+
+</body>
+</html>
