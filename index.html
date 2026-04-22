@@ -1600,7 +1600,7 @@
 
         <!-- SELETOR DE PLANOS -->
         <div class="plan-tabs anim" role="tablist" aria-label="Selecione o período do plano">
-          <button class="plan-tab plan-tab--active" data-plan="mensal" role="tab" aria-selected="true">
+          <button class="plan-tab" data-plan="mensal" role="tab" aria-selected="false">
             Mensal
           </button>
           <button class="plan-tab" data-plan="trimestral" role="tab" aria-selected="false">
@@ -1611,7 +1611,7 @@
             Semestral
             <span class="plan-tab__save">−36%</span>
           </button>
-          <button class="plan-tab plan-tab--star" data-plan="anual" role="tab" aria-selected="false">
+          <button class="plan-tab plan-tab--star plan-tab--active" data-plan="anual" role="tab" aria-selected="true">
             Anual ⭐
             <span class="plan-tab__save">−48%</span>
           </button>
@@ -1621,7 +1621,7 @@
         <div class="plan-panels">
 
           <!-- MENSAL -->
-          <div class="plan-panel plan-panel--active" data-plan="mensal" role="tabpanel">
+          <div class="plan-panel" data-plan="mensal" role="tabpanel">
             <div class="price-card price-card--normal" style="max-width:560px; margin:0 auto;">
               <div class="price-card__badge-top">PLANO MENSAL — MISSÃO FERRO NA CANETA</div>
               <p class="price-card__desc">Pra quem quer entrar na MISSÃO FERRO NA CANETA sem compromisso longo e já começar a treinar do jeito certo com a caneta emagrecedora. Você tem 30 dias de acesso aos treinos completos no app pra sentir na prática como é emagrecer protegendo o músculo e firmando o corpo, sem pelanca.</p>
@@ -1668,7 +1668,7 @@
           </div>
 
           <!-- ANUAL -->
-          <div class="plan-panel" data-plan="anual" role="tabpanel">
+          <div class="plan-panel plan-panel--active" data-plan="anual" role="tabpanel">
             <div class="price-card price-card--vip" style="max-width:560px; margin:0 auto; position:relative;">
               <span class="best-seller">MAIS POPULAR</span>
               <div class="price-card__badge-top">⭐ PLANO ANUAL — FERRO VITALÍCIO NA CANETA</div>
